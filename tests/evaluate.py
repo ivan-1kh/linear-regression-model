@@ -1,5 +1,12 @@
-from main import compute_linear_regression
+
+import sys
+
+sys.path.append('./src/')
+
 import numpy as np
+
+from main import compute_linear_regression
+
 
 VERBOSE = False
 
