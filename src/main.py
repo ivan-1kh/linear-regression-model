@@ -75,3 +75,13 @@ def compute_linear_regression(X, y, alpha=0.01, max_iterations=1000):
     
     # Return weights as a 1-D array and the final cost.
     return (weights.flatten(), final_cost)
+
+def compute_r_squared(X, y, weights):
+    #Compute predictions
+    predictions = np.dot(X, weights) 
+
+    #Compute R squared
+    residuals_fit = np.sum((y - predictions) ** 2)  
+    residuals_mean = np.sum((y - np.mean(y)) ** 2)  
+    r_squared = 1 - (residuals_fit / residuals_mean)
+    print("R squared: ", r_squared)
